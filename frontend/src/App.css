@@ -1,0 +1,85 @@
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.banner {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  margin: 0;
+  font-size: 2.5rem;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.input-form {
+  margin: 20px;
+}
+
+.input-form input, .input-form button {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input-form button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.entries-list {
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+.entries-list ol {
+  padding: 0;
+  list-style-type: none;
+}
+
+.entries-list .entry-item {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: 40px 1fr 1fr 100px;
+  gap: 10px;
+  align-items: center;
+  background-color: #f9f9f9;
+}
+
+.entry-item.gold {
+  background-color: #ffd700;
+}
+
+.entry-item.silver {
+  background-color: #c0c0c0;
+}
+
+.entry-item.bronze {
+  background-color: #cd7f32;
+}
+
+.entry-rank {
+  font-weight: bold;
+}
+
+.entry-name {
+  text-align: left;
+}
+
+.entry-ratio {
+  text-align: left;
+}
+
+.entry-percentage {
+  text-align: right;
+}
