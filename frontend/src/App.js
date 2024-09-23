@@ -23,6 +23,8 @@ function App() {
   // Function to determine the phrase based on the ratio
   const getPhrase = (ratio) => {
     switch (ratio) {
+      case "0/5":
+        return "Are you sure you're a woman?";
       case "1/5":
         return "Easy to please";
       case "2/5":
