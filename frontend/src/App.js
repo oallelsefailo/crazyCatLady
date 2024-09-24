@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState, useEffect } from "react";
 import { db } from "./firebaseConfig";
 import {
@@ -20,7 +19,6 @@ function App() {
   const [percentage, setPercentage] = useState("");
   const [entries, setEntries] = useState([]);
 
-  // Function to determine the phrase based on the ratio
   const getPhrase = (ratio) => {
     switch (ratio) {
       case "0/5":
@@ -40,19 +38,17 @@ function App() {
     }
   };
 
-  // Function to add data to Firestore
   const addEntry = async () => {
     if (name.trim() && ratio.trim() && percentage.trim()) {
       try {
-        const phrase = getPhrase(ratio.trim()); // Get the phrase based on the ratio
+        const phrase = getPhrase(ratio.trim()); 
         if (phrase) {
           await addDoc(collection(db, "cat-lady-entries"), {
             name: name.trim(),
-            ratio: `${ratio.trim()} - ${phrase}`, // Ensure phrase is properly appended to the ratio
+            ratio: `${ratio.trim()} - ${phrase}`, 
             percentage: parseFloat(percentage),
           });
         } else {
-          // If no phrase matches, just store the ratio without appending any extra text
           await addDoc(collection(db, "cat-lady-entries"), {
             name: name.trim(),
             ratio: ratio.trim(),
@@ -60,7 +56,6 @@ function App() {
           });
         }
 
-        // Clear input fields
         setName("");
         setRatio("");
         setPercentage("");
@@ -73,7 +68,6 @@ function App() {
     }
   };
 
-  // Fetch data from Firestore
   useEffect(() => {
     const q = query(
       collection(db, "cat-lady-entries"),
