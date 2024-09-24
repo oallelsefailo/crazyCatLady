@@ -84,55 +84,64 @@ function App() {
   return (
     <div className="App">
       <h1 className="banner">ThrottleFury</h1>
-      <h2>Crazy Cat Lady Test</h2>
-      <div className="input-form">
-        <input
-          id="nameInput"
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <input
-          id="ratioInput"
-          type="text"
-          placeholder="Cat Lady Ratio (e.g., 2/5)"
-          value={ratio}
-          onChange={(e) => setRatio(e.target.value)}
-        />
-        <input
-          id="percentageInput"
-          type="number"
-          placeholder="Percentage %"
-          value={percentage}
-          onChange={(e) => setPercentage(e.target.value)}
-        />
-        <button onClick={addEntry}>Submit</button>
+      <div className="top-section section">
+        <h2>Crazy Cat Lady Test</h2>
+        <div className="input-form">
+          <input
+            id="nameInput"
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
+            id="ratioInput"
+            type="text"
+            placeholder="Cat Lady Ratio (e.g., 2/5)"
+            value={ratio}
+            onChange={(e) => setRatio(e.target.value)}
+          />
+          <input
+            id="percentageInput"
+            type="number"
+            placeholder="Percentage %"
+            value={percentage}
+            onChange={(e) => setPercentage(e.target.value)}
+          />
+          <button onClick={addEntry}>Submit</button>
+        </div>
       </div>
 
-      <div className="entries-list">
-        <h3>Leaderboard</h3>
-        <ol>
-          {entries.map((entry, index) => (
-            <li
-              key={entry.id}
-              className={`entry-item ${
-                index === 0
-                  ? "gold"
-                  : index === 1
-                  ? "silver"
-                  : index === 2
-                  ? "bronze"
-                  : ""
-              }`}
-            >
-              <span className="entry-rank">{index + 1}.</span>
-              <span className="entry-name">{entry.name}</span>
-              <span className="entry-ratio">{entry.ratio}</span>
-              <span className="entry-percentage">{entry.percentage}%</span>
-            </li>
-          ))}
-        </ol>
+      <div className="middle-section section">
+        <div className="entries-list">
+          <h3>Leaderboard</h3>
+          <ol>
+            {entries.map((entry, index) => (
+              <li
+                key={entry.id}
+                className={`entry-item ${
+                  index === 0
+                    ? "gold"
+                    : index === 1
+                    ? "silver"
+                    : index === 2
+                    ? "bronze"
+                    : ""
+                }`}
+              >
+                <span className="entry-rank">{index + 1}.</span>
+                <span className="entry-name">{entry.name}</span>
+                <span className="entry-ratio">{entry.ratio}</span>
+                <span className="entry-percentage">{entry.percentage}%</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+      <div className="bottom-section section">
+        <div style={{ height: "100px", textAlign: "center", color: "white" }}>
+          Welcome to the cat graveyard!
+        </div>
       </div>
     </div>
   );

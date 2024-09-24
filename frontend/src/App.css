@@ -83,3 +83,38 @@
 .entry-percentage {
   text-align: right;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, 
+                              #ffeb3b 0%,   
+                              #81d4fa 55%,   
+                              #3b5087 80%);  
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.section {
+  width: 100%;
+}
+
+.middle-section {
+  flex: 1; 
+}
+
+.bottom-section {
+  height: 185px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: url('https://i.imgur.com/g0hokAO.jpeg') no-repeat center bottom; 
+  background-size: cover; 
+  background-blend-mode: multiply; 
+}
+
+
